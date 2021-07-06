@@ -14,6 +14,7 @@
 
 #include <spicy/spicy.h>
 
+#include "base/util.h"
 #include "options.h"
 #include "printer-json.h"
 #include "printer-text.h"
@@ -47,7 +48,7 @@ static void fatalError(const std::string& msg) {
 
 class SpicyDump : public spicy::Driver, public spicy::rt::Driver {
 public:
-    SpicyDump(const std::string_view& argv0 = "") : spicy::Driver("spicy-dump", argv0) {
+    SpicyDump() : spicy::Driver("spicy-dump", hilti::util::currentExecutable()) {
         spicy::Configuration::extendHiltiConfiguration();
     }
 

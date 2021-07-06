@@ -13,6 +13,8 @@
 
 #include <spicy/spicy.h>
 
+#include "base/util.h"
+
 using spicy::rt::fmt;
 
 static struct option long_driver_options[] = {{"abort-on-exceptions", required_argument, nullptr, 'A'},
@@ -54,7 +56,7 @@ static void fatalError(const hilti::result::Error& error) {
 
 class SpicyDriver : public spicy::Driver, public spicy::rt::Driver {
 public:
-    SpicyDriver(const std::string_view& argv0 = "") : spicy::Driver("spicy-driver", argv0) {
+    explicit SpicyDriver() : spicy::Driver("spicy-driver", hilti::util::currentExecutable()) {
         spicy::Configuration::extendHiltiConfiguration();
     }
 
