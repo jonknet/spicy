@@ -171,7 +171,6 @@ enable_testing()
 add_subdirectory(hilti)
 add_subdirectory(spicy)
 add_subdirectory(scripts)
-add_subdirectory(ci/fuzz)
 add_subdirectory(3rdparty)
 
 # Compute project version.
