@@ -2,8 +2,6 @@
 
 #include <hilti/hilti.h>
 
-#include "base/util.h"
-
 int main(int argc, char** argv) {
     hilti::Driver driver("hiltic", hilti::util::currentExecutable());
 
